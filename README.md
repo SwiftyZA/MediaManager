@@ -1,5 +1,5 @@
 # MediaManager
-A small app to manage your music, class/rate each track and build criteria-based playlists. It also includes an Android app (Xamarin) to control winamp from your phone, providing that its on the same network as the PC running the app.
+A small app to manage your music, class/rate each track, add/edit ID3 tags and build criteria-based playlists. It also includes an Android app (Xamarin) to control winamp from your phone, providing that its on the same network as the PC running the app.
 
 Note: This app is still far from being completed, check the TODO list for progress. I decided to upload it in its current state since it is already functional and becuase so much time has been invested in it that I felt I needed to secure the source code.
 
