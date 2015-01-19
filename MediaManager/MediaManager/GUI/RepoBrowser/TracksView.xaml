@@ -1,0 +1,42 @@
+﻿<UserControl x:Class="MediaManager.GUI.RepoBrowser.TracksView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+             mc:Ignorable="d" xmlns:cal="http://www.caliburnproject.org"
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition MaxWidth="350"/>
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+
+            <DockPanel Grid.Column="0" HorizontalAlignment="Stretch" LastChildFill="True">
+                <GroupBox Header="Music Library">
+                    <DockPanel HorizontalAlignment="Stretch" LastChildFill="True">
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" DockPanel.Dock="Top">
+                            <Button x:Name="Refresh" Content="Refresh"></Button>
+                        </StackPanel>
+                        <TreeView x:Name="Tracks" ItemsSource="{Binding Tracks}" >
+                            <i:Interaction.Triggers>
+                                <i:EventTrigger EventName="SelectedItemChanged">
+                                    <cal:ActionMessage MethodName="SelectedItem">
+                                        <cal:Parameter Value="{Binding Path=SelectedItem, ElementName=Tracks}" />
+                                    </cal:ActionMessage>
+                                </i:EventTrigger>
+                            </i:Interaction.Triggers>
+                        </TreeView>
+                    </DockPanel>
+                </GroupBox>
+            </DockPanel>
+            <DockPanel Grid.Column="1" HorizontalAlignment="Stretch" LastChildFill="True">
+                <ContentControl x:Name="TrackProperties" />
+            </DockPanel>
+        </Grid>
+        <ContentControl x:Name="Dialogs" 
+                        VerticalContentAlignment="Stretch"
+                        HorizontalContentAlignment="Stretch"/>
+    </Grid>
+</UserControl>

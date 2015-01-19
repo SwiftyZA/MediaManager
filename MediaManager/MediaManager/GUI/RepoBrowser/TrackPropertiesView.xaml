@@ -1,0 +1,49 @@
+﻿<UserControl x:Class="MediaManager.GUI.RepoBrowser.TrackPropertiesView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <GroupBox Header="Track Information">
+            <DockPanel LastChildFill="True">
+                <ContentControl x:Name="Miscellaneous" DockPanel.Dock="Top" />
+                <ContentControl x:Name="ID3Tags" DockPanel.Dock="Top" />
+                <GroupBox Header="Properties">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition MaxWidth="350"/>
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+
+                        <DockPanel Grid.Column="0" Grid.Row="1" HorizontalAlignment="Stretch" LastChildFill="True">
+
+                            <TextBox x:Name="TrackId" Visibility="Collapsed" />
+                            <Border BorderBrush="#FFB8B8B8" BorderThickness="0,0,1,0" Padding="0,0,5,0" Margin="0,0,5,0">
+
+                                <DockPanel HorizontalAlignment="Stretch" LastChildFill="True">
+                                    <Grid DockPanel.Dock="Top">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition />
+                                            <ColumnDefinition />
+                                        </Grid.ColumnDefinitions>
+                                        <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right" DockPanel.Dock="Top">
+                                            <Button x:Name="Add" Content="Add New Property" Margin="5"></Button>
+                                        </StackPanel>
+                                    </Grid>
+
+                                    <ListBox x:Name="Properties" DisplayMemberPath="Property.Name" SelectedItem="{Binding SelectedProperty}"></ListBox>
+                                </DockPanel>
+                            </Border>
+                        </DockPanel>
+                        <DockPanel Grid.Column="1" HorizontalAlignment="Stretch" LastChildFill="True">
+                            <ContentControl x:Name="Property" DockPanel.Dock="Top" />
+                            <StackPanel />
+                        </DockPanel>
+                    </Grid>
+                </GroupBox>
+            </DockPanel>
+        </GroupBox>
+    </Grid>
+</UserControl>

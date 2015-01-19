@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="9cdf87ca18474d1b967af9c080b5cdf8" Name="Diagram1">
+        <EntityTypeShape EntityType="DataModel.Album" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataModel.Band" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataModel.Genre" Width="1.5" PointX="0.75" PointY="5.375" IsExpanded="true" />
+        <AssociationConnector Association="DataModel.FK_BAND" ManuallyRouted="false" />
+        <AssociationConnector Association="DataModel.FK_Genre" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="DataModel.SystemParameter" Width="1.5" PointX="0.75" PointY="7.75" />
+        <EntityTypeShape EntityType="DataModel.PropertyOption" Width="1.5" PointX="7.5" PointY="6.875" />
+        <EntityTypeShape EntityType="DataModel.PropertyType" Width="1.5" PointX="3" PointY="7.125" />
+        <EntityTypeShape EntityType="DataModel.TrackProperty" Width="1.5" PointX="5.25" PointY="4.375" />
+        <EntityTypeShape EntityType="DataModel.User" Width="1.5" PointX="10.25" PointY="3.5" />
+        <AssociationConnector Association="DataModel.FK_TrackProperties_Users" />
+        <EntityTypeShape EntityType="DataModel.MusicVideo" Width="1.5" PointX="7.5" PointY="1" />
+        <EntityTypeShape EntityType="DataModel.PlayListArtist" Width="1.5" PointX="14.75" PointY="2.5" />
+        <EntityTypeShape EntityType="DataModel.PlayListGenre" Width="1.5" PointX="14.75" PointY="6.125" />
+        <EntityTypeShape EntityType="DataModel.PlayList" Width="1.5" PointX="12.5" PointY="3.125" />
+        <EntityTypeShape EntityType="DataModel.SearchCritria" Width="1.5" PointX="17.75" PointY="5" />
+        <AssociationConnector Association="DataModel.FK_PlayListArtists_Artist" />
+        <AssociationConnector Association="DataModel.FK_PlayListGenres_Genres" />
+        <AssociationConnector Association="DataModel.FK_PlayListArtists_PlayList" />
+        <AssociationConnector Association="DataModel.FK_PlayListGenres_PlayList" />
+        <AssociationConnector Association="DataModel.FK_PlayLists_User" />
+        <AssociationConnector Association="DataModel.FK_SearchCritria_Playlist" />
+        <EntityTypeShape EntityType="DataModel.Property" Width="1.5" PointX="5.25" PointY="7.75" />
+        <AssociationConnector Association="DataModel.FK_Properties_PropertyType" />
+        <AssociationConnector Association="DataModel.FK_PropertyOptions_Properties" />
+        <AssociationConnector Association="DataModel.FK_SearchCritria_Property" />
+        <AssociationConnector Association="DataModel.FK_TrackProperties_Properties" />
+        <EntityTypeShape EntityType="DataModel.Track" Width="1.5" PointX="5.25" PointY="0.5" />
+        <AssociationConnector Association="DataModel.FK_Album" />
+        <AssociationConnector Association="DataModel.FK_MusicVideos_Track" />
+        <AssociationConnector Association="DataModel.FK_MusicVideos_VideoTrack" />
+        <AssociationConnector Association="DataModel.FK_TrackProperties_Tracks" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,40 @@
+﻿<UserControl x:Class="MediaManager.GUI.Common.AddPropertyView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition MinWidth="250"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <TextBlock Margin="5">Select a property to add</TextBlock>
+        <ComboBox x:Name="Properties" Margin="5" SelectedItem="{Binding SelectedProperty}" DisplayMemberPath="Name" Grid.Column="1"></ComboBox>
+
+        <TextBlock Margin="5" Grid.Row="1" >Property Value</TextBlock>
+        <StackPanel Grid.Column="1" Grid.Row="1" >
+            <ComboBox x:Name="Options" Margin="5" SelectedItem="{Binding SelectedOption}" DisplayMemberPath="Name"
+                          Visibility="{Binding SelectOneVisibility, Converter={StaticResource booleanToVisibility}}" />
+            <TextBox x:Name="TextValue" Margin="5" Visibility="{Binding TextValueVisibility, Converter={StaticResource booleanToVisibility}}" />
+            <CheckBox x:Name="BoolValue" Margin="5" Visibility="{Binding BoolVisibility, Converter={StaticResource booleanToVisibility}}"/>
+            <ListBox SelectionMode="Multiple" x:Name="List" DisplayMemberPath="Name" Margin="5" SelectedItem="{Binding SelectedList}" 
+                     Visibility="{Binding SelectMultiVisibility, Converter={StaticResource booleanToVisibility}}" MinHeight="100" />
+        </StackPanel>
+
+        <TextBlock Margin="5" Grid.Row="2" Visibility="{Binding DirectionVisibility, Converter={StaticResource booleanToVisibility}}">Search Direction</TextBlock>
+        <ComboBox x:Name="Directions" Margin="5" SelectedItem="{Binding Direction}" Grid.Row="2" Grid.Column="1"
+                          Visibility="{Binding DirectionVisibility, Converter={StaticResource booleanToVisibility}}" />
+
+        <StackPanel Grid.Row="4" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button x:Name="Add" Content="Add" Margin="5" Width="50" ></Button>
+            <Button x:Name="Close" Content="Close" Margin="5" Width="50" ></Button>
+        </StackPanel>
+    </Grid>
+</UserControl>

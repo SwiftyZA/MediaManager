@@ -1,0 +1,19 @@
+﻿<Application xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:MediaManager.Framework"
+             xmlns:Converters="clr-namespace:MediaManager.Framework.Converters"
+             x:Class="MediaManager.App">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Resources/NamedStyles.xaml" />
+                <ResourceDictionary Source="Resources/DefaultStyles.xaml" />
+                <ResourceDictionary>
+                    <local:Bootstrapper x:Key="bootstrapper" />
+                </ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+            <Converters:BooleanToVisibilityConverter x:Key="booleanToVisibility" />
+            <Converters:NullToCollapsedConverter x:Key="nullToCollapsed" />
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

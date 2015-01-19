@@ -1,0 +1,76 @@
+﻿<UserControl x:Class="MediaManager.GUI.ClientDetails.ClientDetailsView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Orientation="Horizontal">
+            <TextBlock Width="40">User:</TextBlock>
+            <TextBlock x:Name="Username">BOOM!</TextBlock>
+        </StackPanel>
+        <DockPanel Grid.Row="1" HorizontalAlignment="Stretch" LastChildFill="True">
+            <GroupBox Header="Issue Actions" HorizontalAlignment="Left" Margin="10,10,10,10" 
+		  VerticalAlignment="Top" Padding="10">
+                <Grid >
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+
+                    <StackPanel Grid.Row="0" Orientation="Horizontal" >
+                        <TextBlock Width="90">Send message:</TextBlock>
+                        <TextBox x:Name="Message" Width="400"></TextBox>
+                        <Button x:Name="Post" Content="Post it!" Margin="10,0,0,0"></Button>
+                    </StackPanel>
+                </Grid>
+            </GroupBox>
+        </DockPanel>
+        <DockPanel Grid.Row="2" HorizontalAlignment="Stretch" LastChildFill="True">
+            <GroupBox Header="User To do list" HorizontalAlignment="Left" Margin="10,0,10,10"
+		  VerticalAlignment="Top" Padding="10">
+                <ListView Style="{DynamicResource ToDoList}" SelectedItem="{Binding SelectedToDoItem, Mode=TwoWay}"  x:Name="ToDoList" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <StackPanel Orientation="Vertical" />
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Style="{DynamicResource ListItemStackPanel}" Orientation="Vertical">
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Style="{DynamicResource LabelTextBlock}">Task:</TextBlock>
+                                    <TextBlock x:Name="AlertMessage" Text="{Binding AlertMessage}"></TextBlock>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Style="{DynamicResource LabelTextBlock}">Details:</TextBlock>
+                                    <TextBlock x:Name="Details" Text="{Binding Details}"></TextBlock>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Style="{DynamicResource LabelTextBlock}">Acknowledged:</TextBlock>
+                                    <TextBlock x:Name="Acknowledged" Text="{Binding Acknowledged}"></TextBlock>
+                                    <TextBlock Style="{DynamicResource LabelTextBlock}">Acknowledged Date:</TextBlock>
+                                    <TextBlock x:Name="AcknowledgedDate" Text="{Binding AcknowledgedDate}"></TextBlock>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Style="{DynamicResource LabelTextBlock}">Completed:</TextBlock>
+                                    <TextBlock x:Name="Completed" Text="{Binding Completed}"></TextBlock>
+                                    <TextBlock Style="{DynamicResource LabelTextBlock}">Completed Date:</TextBlock>
+                                    <TextBlock x:Name="CompletedDate" Text="{Binding CompletedDate}"></TextBlock>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Style="{DynamicResource LabelTextBlock}">Date Assigned:</TextBlock>
+                                    <TextBlock x:Name="DateAssigned" Text="{Binding DateAssigned}"></TextBlock>
+                                </StackPanel>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ListView>
+            </GroupBox>
+        </DockPanel>
+            
+    </Grid>
+</UserControl>

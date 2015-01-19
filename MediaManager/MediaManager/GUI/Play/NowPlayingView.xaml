@@ -1,0 +1,46 @@
+﻿<UserControl x:Class="MediaManager.GUI.Play.NowPlayingView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <StackPanel>
+            <GroupBox Header="Winamp Functions">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition MaxWidth="100"/>
+                        <ColumnDefinition />
+                        <ColumnDefinition MaxWidth="100"/>
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    
+                    <TextBlock Margin="5" Text="Track Title:" />
+                    <StackPanel Grid.ColumnSpan="3" Grid.Column="1">
+                        <TextBlock x:Name="Title" Margin="5" />
+                    </StackPanel>
+
+                    <StackPanel Grid.ColumnSpan="4" Grid.Row="1" HorizontalAlignment="Left" Orientation="Horizontal">
+                        <Button x:Name="Previous" Content ="Previous" Width="100" Margin="5"/>
+                        <Button x:Name="Stop" Content ="Stop" Width="100" Margin="5"/>
+                        <Button x:Name="Play" Content ="Play" Width="100" Margin="5"/>
+                        <Button x:Name="Pause" Content ="Pause" Width="100" Margin="5"/>
+                        <Button x:Name="Next" Content ="Next" Width="100" Margin="5"/>
+                        <Button x:Name="VolumeUp" Content ="Volume up" Width="100" Margin="5"/>
+                        <Button x:Name="VolumeDown" Content ="Volume Down" Width="100" Margin="5"/>
+                    </StackPanel>
+                </Grid>
+            </GroupBox>
+        </StackPanel>
+
+    </Grid>
+</UserControl>

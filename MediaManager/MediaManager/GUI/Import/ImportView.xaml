@@ -1,0 +1,65 @@
+﻿<UserControl x:Class="MediaManager.GUI.Import.ImportView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+              mc:Ignorable="d" xmlns:cal="http://www.caliburnproject.org" 
+             d:DesignHeight="600" d:DesignWidth="900">
+    <Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40" />
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition />
+                <RowDefinition Height="40"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="30*" />
+                <ColumnDefinition Width="41*" />
+                <ColumnDefinition Width="49*"/>
+                <ColumnDefinition Width="30*" />
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" Grid.Row="0" Text="Directory" FontSize="15" Margin="10"></TextBlock>
+            <TextBox Grid.Column="1" Grid.Row="0" x:Name="Directory" IsReadOnly="True" Margin="10, 8" Grid.ColumnSpan="2" />
+            <Button x:Name="Browse" Grid.Column="3" Grid.Row="0" Content="Browse" Margin="10, 8" ></Button>
+
+            <TextBlock Grid.Column="0" Grid.Row="1" Text="Import Type" FontSize="15" Margin="10"></TextBlock>
+            <StackPanel Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2" Orientation="Horizontal" Margin="10">
+                <RadioButton GroupName="type" Content="Single Album" Margin="5, 0"  IsChecked="{Binding SingleChecked, Mode=TwoWay}" FontSize="15" />
+                <RadioButton GroupName="type" Content="All Media (incl. subfolders)" Margin="5, 0" IsChecked="{Binding AllChecked, Mode=TwoWay}" FontSize="15" />
+
+                <!--TODO:
+                    Dear Future Me
+                    When you have internet again, please check the optimum way of binding radio buttons, I don't like what we did here... tsk tsk...
+                    Yours sincerely,
+                    Past you.-->
+            </StackPanel>
+            <CheckBox x:Name="MoveFiles" Content="Delete source files?" Grid.Column="4" Grid.Row="1" FontSize="15" Margin="10"></CheckBox>
+
+            <TextBlock Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="3" Text="Note: In 'All Media' mode the track information will be gathered from metadata only, missing values will be saved as 'unknown'. (This can be edited manually at any stage)" FontSize="15" Margin="15,0" TextWrapping="Wrap"></TextBlock>
+
+            <TextBlock Grid.Column="0" Grid.Row="3" Text="Band" FontSize="15" Margin="10"></TextBlock>
+            <ComboBox Grid.Column="1" Grid.Row="3" x:Name="Bands" IsReadOnly="True" Margin="10, 8" IsEnabled="{Binding SingleChecked}"
+                  DisplayMemberPath="Name" SelectedItem="{Binding SelectedBand}" Grid.ColumnSpan="2"/>
+            <Button x:Name="AddBand" Grid.Column="3" Grid.Row="3" Content="Add Band" Margin="10, 8" ></Button>
+
+            <TextBlock Grid.Column="0" Grid.Row="4" Text="Album" FontSize="15" Margin="10"></TextBlock>
+            <ComboBox Grid.Column="1" Grid.Row="4" x:Name="Albums" IsReadOnly="True" Margin="10, 8" IsEnabled="{Binding SingleChecked}"
+                  DisplayMemberPath="Name" SelectedItem="{Binding SelectedAlbum}" Grid.ColumnSpan="2"/>
+            <Button x:Name="AddAlbum" Grid.Column="3" Grid.Row="4" Content="Add Album" Margin="10, 8"></Button>
+
+            <TextBox Grid.Column="0" Grid.Row="5" Grid.ColumnSpan="4" x:Name="Info" VerticalScrollBarVisibility="Auto" ScrollViewer.CanContentScroll="True" HorizontalScrollBarVisibility="Auto" AcceptsReturn="True" IsReadOnly="True" ScrollViewer.PanningMode="VerticalOnly" />
+
+            <StackPanel Grid.Column="2" Grid.Row="6" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Right">
+                <Button x:Name="Import" Content="Import" Margin="5" Width="100"></Button>
+                <Button x:Name="Abort" Content="Abort Import" Margin="5" Width="100"></Button>
+            </StackPanel>
+        </Grid>
+        <ContentControl x:Name="Dialogs" 
+                        VerticalContentAlignment="Stretch"
+                        HorizontalContentAlignment="Stretch" Cursor="None"/>
+    </Grid>
+</UserControl>

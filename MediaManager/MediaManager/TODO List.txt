@@ -1,0 +1,9 @@
+﻿TODO:
+fGetPlayListTracks needs to check select multi criteria too
+Add property screen should allow the user to select a value as well.							#DONE	
+Prevent duplicate properties from being added to a track										#DONE	
+Delete playlist
+Now playing screen with winamp integration
+Andriod App to remotely control winamp
+Revisit all VMs and optimise code
+Move Data connection to BaseScreen to avoid entities for other screens detaching on errors

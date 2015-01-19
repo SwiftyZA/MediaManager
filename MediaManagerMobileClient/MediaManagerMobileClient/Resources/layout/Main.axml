@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    <LinearLayout
+        android:id="@+id/wrapper0"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/resultText"
+        android:weightSum="1.0"
+        android:minWidth="25px"
+        android:minHeight="25px" />
+    <LinearLayout
+        android:id="@+id/wrapper1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/wrapper0"
+        android:weightSum="1.0">
+        <Button
+            android:text="Previous"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".25"
+            android:id="@+id/button1" />
+        <Button
+            android:text="Stop"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/button1"
+            android:layout_alignTop="@+id/button1"
+            android:layout_weight=".25"
+            android:id="@+id/button2" />
+        <Button
+            android:text="Play"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/button2"
+            android:layout_alignTop="@+id/button2"
+            android:layout_weight=".25"
+            android:id="@+id/button3" />
+        <Button
+            android:text="Next"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/button3"
+            android:layout_alignTop="@+id/button3"
+            android:layout_weight=".25"
+            android:id="@+id/buttonAdd" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/wrapper2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/wrapper1"
+        android:weightSum="1.0">
+        <Button
+            android:text="Volume Down"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/wrapper2"
+            android:layout_weight=".25"
+            android:id="@+id/button4" />
+        <Button
+            android:text="Volume   Up"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/button4"
+            android:layout_alignTop="@+id/button4"
+            android:layout_weight=".25"
+            android:id="@+id/button5" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/wrapper3"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/wrapper2"
+        android:weightSum="1.0"
+        android:minWidth="25px"
+        android:minHeight="25px" />
+    <LinearLayout
+        android:id="@+id/wrapper4"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/wrapper3"
+        android:weightSum="1.0"
+        android:minWidth="25px"
+        android:minHeight="25px" />
+</RelativeLayout>

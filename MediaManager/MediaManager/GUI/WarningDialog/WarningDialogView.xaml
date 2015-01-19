@@ -1,0 +1,27 @@
+﻿<UserControl x:Class="MediaManager.GUI.WarningDialog.WarningDialogView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" Width="400"
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition  Height="30"/>
+            <RowDefinition />
+            <RowDefinition  Height="30"/>
+            <RowDefinition  Height="30"/>
+        </Grid.RowDefinitions>
+        <TextBlock FontSize="18" FontWeight="Bold" Foreground="Red" HorizontalAlignment="Center" VerticalAlignment="Center">Warning</TextBlock>
+        <TextBlock  x:Name="Message" Grid.Row="1" TextWrapping="Wrap" Margin="5" FontSize="16">sdfgsdfg</TextBlock>
+        <StackPanel Grid.Row="2" HorizontalAlignment="Center" Orientation="Horizontal" VerticalAlignment="Center">
+            <TextBlock>Apply selection to all accurances</TextBlock>
+            <CheckBox x:Name="ApplyToAll" Margin="2"></CheckBox>
+        </StackPanel>
+        <StackPanel Grid.Row="3" HorizontalAlignment="Right" Orientation="Horizontal">
+            <Button x:Name="UseMeta" Content="Use Metadata" Margin="5" Padding="5,0"></Button>
+            <Button x:Name="UseUser" Content="Use User Input" Margin="5" Padding="5,0"></Button>
+            <Button x:Name="Abort" Content="Abort Import" Margin="5" Padding="5,0"></Button>    
+        </StackPanel>
+    </Grid>
+</UserControl>
