@@ -5,7 +5,7 @@ Note: This app is still far from being completed, check the TODO list for progre
 
 The mobile client was also my first ever mobile application, written in under an hour as a PoC. That being said, I fully expect that there are vastly superior methods to those that I used. I do intent to revisit the code once I have had the time to read up on Android & Xamarin best practices and have gone through some tutorials.
 
-Some technical details:
-C# (WPF \ .Net4.5.2)
-Caliburn Mirco
-Entity Framework 6
+Some technical details:<br/>
+C# (WPF \ .Net4.5.2)<br/>
+Caliburn Mirco<br/>
+Entity Framework 6<br/>
